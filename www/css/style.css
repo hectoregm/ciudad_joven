@@ -1,1 +1,16 @@
 /* Empty. Add your own CSS if you like */
+
+.col-50{
+	margin: 1px;
+	background-color: gray;
+}
+
+.col{
+	
+	margin: 2px;
+	background-color: gray;	
+}
+
+.padding{
+	padding: 0px;
+}
