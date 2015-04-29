@@ -2,15 +2,26 @@
 
 .col-50{
 	margin: 1px;
-	background-color: gray;
+	background-color: #00ADEF;
 }
 
 .col{
 	
 	margin: 2px;
-	background-color: gray;	
+	background-color: #00ADEF;	
 }
 
 .padding{
 	padding: 0px;
+}
+
+#te{
+	margin-top: 15%; 
+	color: black;
+}
+
+.imagen{
+	margin-top: 20px;
+	width: 260px;
+	height: 250px;
 }
