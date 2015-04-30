@@ -1,0 +1,10 @@
+<ion-view view-title="Eventos">
+  <ion-content>
+    <ion-list class="Eventos">
+      <ion-item class="item item-thumbnail-left" ng-repeat="eventos in eventos track by $index" href="#/tab/eventos/{{eventos.name}}">
+        <img src="../img/license-to-ill.jpg">
+        <p style="margin-top: 14%">{{eventos.name}}</p>
+    </ion-list>
+    <ion-infinite-scroll ng-if="haveMoreData" on-infinite="loadMore()" distance="2%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
