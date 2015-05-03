@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
-.col{
+.secBus{
 	width: 50px;
 	height: 100px;
 	margin: 15px;
@@ -28,7 +28,7 @@
 }
 
 .iconArt{
-	width: 60px;
+	width: 65px;
 	height: 60px;
 }
 
@@ -37,9 +37,70 @@
   	width: 50px;
   	height: 50px;
 }
-
-.iconNom{
+.icono{
 	width: 50px;
 	height: 50px;
 	margin-top: 6px;
+}
+
+.item-image{
+	width: 55px;
+  	height: 80px;
+  	margin-top: 3px;
+  	margin-left: 6px;
+}
+
+.flecha{
+	opacity: .7;
+}
+
+.secEve1{
+	margin: 10px;
+	background-color: #00ADEF;
+	margin-top: -40px;
+}
+
+.secEveImg{
+	height: 216px;
+	width: 40px;
+	position: relative;
+}
+
+.secEveInfo{
+	height: 190px;
+}
+
+#linkBol{
+	position: absolute;
+ 	margin-top: 159px;
+  	margin-left: -152px;
+  	font-size: 12px;
+}
+
+.secEve2{
+	margin: 10px;
+	margin-top: -3px;
+}
+.posicionIconRed{
+	margin: 10px;
+	margin-left: 25px;
+}
+
+#agregar{
+	margin-left: 16px;
+}
+
+.secEve3{
+	width: 344px;
+	background-color: #00ADEF;
+	margin-left: 16px;
+}
+#secDesc{
+	background-color: #00ADEF;
+	height: 100px;
+}
+
+#secComent{
+	background-color: #00ADEF;
+	height: 100px;
 }
