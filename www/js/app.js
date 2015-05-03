@@ -56,7 +56,7 @@ var eventos =[
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -126,11 +126,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('ciudadjoven.evento',{
-    url: '/eventos/:eventosName',
+  .state('ciudadjoven.evento', {
+    url: '/eventos/:eventoName',
     views:{
       'evento': {
-        templateUrl: 'templates/evento.html',
+        templateUrl: "templates/evento.html"
       }
     }
   })
