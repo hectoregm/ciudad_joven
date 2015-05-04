@@ -1,9 +1,11 @@
 <ion-view view-title="Eventos">
   <ion-content>
     <ion-list class="Eventos">
-      <ion-item class="item item-thumbnail-left" ng-repeat="eventos in eventos track by $index" href="#/tab/eventos/{{eventos.name}}">
-        <img src="../img/license-to-ill.jpg">
-        <p style="margin-top: 14%">{{eventos.name}}</p>
+      <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="eventos in eventos track by $index" href="#/ciudadjoven/eventos/{{eventos.name}}">
+        <img style="width: 56px;height: 80px;margin-left: 15px;" src="../img/corona2015.jpg">
+        <p style="margin-top: 14%; color: #00ADEF"><strong>{{eventos.name}}</strong></p>
+        <span class="icon ion-chevron-right flecha"></span>
+      </ion-item>
     </ion-list>
     <ion-infinite-scroll ng-if="haveMoreData" on-infinite="loadMore()" distance="2%"></ion-infinite-scroll>
   </ion-content>
