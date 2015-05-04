@@ -1,21 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('EventosCtrl', function($scope,$timeout){
+	$scope.eventos = eventos.slice(0,14);
+	$scope.haveMoreData = true;
+	$scope.loadMore = function() {
+		$timeout(function(){
+			$scope.eventos = $scope.eventos.concat(eventos.slice(0,14));
+			$scope.$broadcast('scroll.infiniteScrollcomplete');
+		}, 2000);
+	};	
 });
+
 

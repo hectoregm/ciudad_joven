@@ -1,14 +1,11 @@
 /* Empty. Add your own CSS if you like */
 
-.col-50{
-	margin: 1px;
-	background-color: #00ADEF;
-}
-
 .col{
-	
-	margin: 2px;
-	background-color: #00ADEF;	
+	width: 50px;
+	height: 100px;
+	margin: 15px;
+  	border-radius: 20px;
+	background-color: #00ADEF;
 }
 
 .padding{
@@ -24,4 +21,25 @@
 	margin-top: 20px;
 	width: 260px;
 	height: 250px;
+}
+
+.row{
+	margin-top: 20%;
+}
+
+.iconArt{
+	width: 60px;
+	height: 60px;
+}
+
+.iconGen{
+	margin-top: -13px;
+  	width: 50px;
+  	height: 50px;
+}
+
+.iconNom{
+	width: 50px;
+	height: 50px;
+	margin-top: 6px;
 }

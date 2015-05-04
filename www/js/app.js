@@ -1,3 +1,54 @@
+//Eventos de prueba
+var eventos =[
+    { name: 'Corona Capital 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 0},
+    { name: 'Vive Latino 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 1},
+    { name: 'Blur Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 2},
+    { name: 'Tame Impala Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 3},
+    { name: 'Nicolas Jaar Live 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 4},
+    { name: 'Muse Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 5},
+    { name: 'Alabama Shakes Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 6},
+    { name: 'Jamie XX Live 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 7},
+    { name: 'Pearl Jam Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 8},
+    { name: 'Todd Terje Live 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 9},
+    { name: 'Judas Priest Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 10},
+    { name: 'Enjambre Live 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 11},
+    { name: 'The National Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 12},
+    { name: 'Caifanes Tour 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 13},
+    { name: 'Phoenix Live 2015',
+      img: '../img/license-to-ill.jpg',
+      id: 14}
+    ];
+
+
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -30,64 +81,63 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+    .state('ciudadjoven', {
+    url: "/ciudadjoven",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/ciudadjoven.html"
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.inicio', {
+  .state('ciudadjoven.inicio', {
     url: '/inicio',
     views: {
       'tab-inicio': {
-        templateUrl: 'templates/tab-inicio.html',
-        controller: 'DashCtrl'
+        templateUrl: 'templates/inicio.html',
       }
     }
   })
 
-  .state('tab.eventos', {
+  .state('ciudadjoven.eventos', {
       url: '/eventos',
       views: {
         'tab-eventos': {
-          templateUrl: 'templates/tab-eventos.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          templateUrl: 'templates/eventos.html',
+          controller: 'EventosCtrl'
         }
       }
     })
 
-  .state('tab.busqueda', {
-    url: '/busqueda',
+  .state('ciudadjoven.busquedas', {
+    url: '/busquedas',
     views: {
-      'tab-busqueda': {
-        templateUrl: 'templates/tab-busqueda.html',
-        controller: 'AccountCtrl'
+      'tab-busquedas': {
+        templateUrl: 'templates/busquedas/index.html',
       }
     }
   })
 
-  .state('tab.conf', {
+  .state('ciudadjoven.conf', {
     url: '/configuraciones',
     views: {
       'tab-conf': {
-        templateUrl: 'templates/tab-conf.html',
-        controller: 'AccountCtrl'
+        templateUrl: 'templates/config.html',
       }
     }
-  });
+  })
+
+
+  .state('ciudadjoven.evento',{
+    url: '/eventos/:eventosName',
+    views:{
+      'evento': {
+        templateUrl: 'templates/evento.html',
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/inicio');
+  $urlRouterProvider.otherwise('/ciudadjoven/inicio');
 
 });
+
