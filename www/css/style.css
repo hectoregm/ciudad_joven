@@ -133,18 +133,17 @@ a{
 }
 
 #toggleTam{
-	height: 230px;
+	height: 55px;
 }
 
 .tamanoItem{
-	margin-top: 19px;
+	margin-top: -1px;
   	width: 375px;
-  	margin-left: -16px;
   	height: 60px;
 }
 
 .tamanoItemDos{
 	width: 375px;
 	height: 60px;
-	margin-left: -16px;
+	
 }
