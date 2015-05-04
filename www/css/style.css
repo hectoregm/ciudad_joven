@@ -26,14 +26,37 @@
 .row{
 	margin-top: 20%;
 }
-
-.iconArt{
-	width: 65px;
-	height: 60px;
+#iconArt{
+	width: 55px;
+	height: 55px;
+	margin-top: 3px;
 }
 
-.iconGen{
-	margin-top: -13px;
+#iconBand{
+	width: 65px;
+	height: 65px;
+}
+
+#iconLoc{
+	width: 55px;
+  	height: 55px;
+  	margin-top: 3px
+}
+
+#iconFec{
+	width: 55px;
+	height: 55px;
+	margin-top: 3px;
+}
+
+#iconNom{
+	width: 55px;
+  	height: 55px;
+  	margin-top: 3px;
+}
+
+#iconGen{
+	margin-top: 9px;
   	width: 50px;
   	height: 50px;
 }
@@ -56,7 +79,7 @@
 
 .secEve1{
 	margin: 10px;
-	/*background-color: #00ADEF;*/
+	background-color: #00ADEF;
 	margin-top: -40px;
 }
 

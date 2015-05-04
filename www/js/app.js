@@ -111,8 +111,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   .state('ciudadjoven.busquedas', {
     url: '/busquedas',
     views: {
-      'tab-busquedas': {
-        templateUrl: 'templates/busquedas/index.html',
+      'tab-busqueda': {
+        templateUrl: 'templates/busquedas/indexBusqueda.html',
       }
     }
   })
