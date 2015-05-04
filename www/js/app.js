@@ -112,7 +112,63 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/busquedas',
     views: {
       'tab-busqueda': {
-        templateUrl: 'templates/busquedas/indexBusqueda.html',
+        templateUrl: 'templates/busquedas/index.html',
+      }
+    }
+  })
+
+  .state('ciudadjoven.artista', {
+    url: '/artista',
+    views: {
+      'tab-artista': {
+        templateUrl: 'templates/busquedas/artista.html',
+      }
+    }
+  })
+
+  .state('ciudadjoven.banda', {
+    url: '/banda',
+    views: {
+      'tab-banda': {
+        templateUrl: 'templates/busquedas/banda.html',
+      }
+    }
+  })
+
+  .state('ciudadjoven.genero', {
+    url: '/genero',
+    views: {
+      'tab-genero': {
+        templateUrl: 'templates/busquedas/genero.html',
+      }
+    }
+  })
+
+
+  .state('ciudadjoven.nombre', {
+    url: '/nombre',
+    views: {
+      'tab-nombre': {
+        templateUrl: 'templates/busquedas/nombre.html',
+      }
+    }
+  })
+
+  .state('ciudadjoven.localidad', {
+    url: '/localidad',
+    views: {
+      'tab-localidad': {
+        templateUrl: 'templates/busquedas/localidad.html',
+      }
+    }
+  })
+
+
+   .state('ciudadjoven.fecha', {
+    url: '/fecha',
+    views: {
+      'tab-fecha': {
+        templateUrl: 'templates/busquedas/fecha.html',
       }
     }
   })
