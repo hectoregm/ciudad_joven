@@ -2,37 +2,32 @@
   <ion-content>
     <ion-list>
       <ion-item class="item item-divider">
-        Datos Personales
+        
       </ion-item>
       <ion-item class="item-icon-right">
         Usuario
         <span class="icon ion-chevron-right flecha"></span>
       </ion-item>
       <ion-item class="item item-divider">
-        Alertas
+       
       </ion-item>
-      <ion-toggle ng-model="checked" toggle-class="toggle-calm" id="toggleTam" >
-          OFF
+      <ion-toggle ng-model="activarAlert" toggle-class="toggle-calm" id="toggleTam" >
+        Alertas
       </ion-toggle>
       <ion-list>
             <ion-item class="item tamanoItem">
-              Día
-              <input class="input-label posicionContador" type="number">
+              <p class="etiqueta">Día</p>
+              <input ng-disabled="!activarAlert" id="contador" type="number" min="1" max="31">
             </ion-item>
             <ion-item class="item tamanoItemDos">
-              Hora
-              <input class="input-label" type="number">
+              <p>Hora</p>
+              <input ng-disabled="!activarAlert" id="contador" type="number" min="1" max="31">
             </ion-item>
             <ion-item class="item tamanoItemDos">
-              Minutos
-              <input class="input-label" type="number">
+              <p>Minutos</p>
+              <input ng-disabled="!activarAlert" id="contador" type="number" min="1" max="31">
             </ion-item>
         </ion-list>
     </ion-list>
   </ion-content>
 </ion-view>
-      
-
-<!--
-
-          -->

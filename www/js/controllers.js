@@ -1,6 +1,7 @@
-angular.module('starter.controllers', [])
+var app = angular.module('starter.controllers', []);
 
-.controller('EventosCtrl', function($scope,$timeout){
+
+app.controller('EventosCtrl', function($scope,$timeout){
 	$scope.eventos = eventos.slice(0,14);
 	$scope.haveMoreData = true;
 	$scope.loadMore = function() {
@@ -8,7 +9,9 @@ angular.module('starter.controllers', [])
 			$scope.eventos = $scope.eventos.concat(eventos.slice(0,14));
 			$scope.$broadcast('scroll.infiniteScrollcomplete');
 		}, 2000);
-	};	
+	};
 });
+
+
 
 
