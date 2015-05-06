@@ -12,15 +12,19 @@
 	padding: 0px;
 }
 
-#te{
-	margin-top: 15%; 
-	color: black;
+#titulo{
+	margin-top: 30%;
+	letter-spacing: 2px; 
+	color: #00ADEF;
+	font-size: 2.35em;
+	font-family: 'Fjalla One', sans-serif;
 }
 
 .imagen{
-	margin-top: 20px;
-	width: 260px;
-	height: 250px;
+	margin-left: 20px;
+	width: 360px;
+	height: 350px;
+	margin-top: -10%;
 }
 
 .row{
