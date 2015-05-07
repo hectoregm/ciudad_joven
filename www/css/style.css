@@ -125,8 +125,12 @@
 	margin-left: 16px;
 }
 #secDesc{
-	background-color: #00ADEF;
-	height: 100px;
+	width: 336px;
+  	border-radius: 14px;
+  	border-color: #00ADF0;
+  	height: 100px;
+  	border-width: 2px;
+  	border-style: solid;
 }
 
 #secComent{
@@ -188,4 +192,8 @@ a{
 	color: white;
 	font-size: 15px;
 	margin-top: 3px;
+}
+
+#flch:hover{
+	color: #00ADEF;
 }
