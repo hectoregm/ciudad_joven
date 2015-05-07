@@ -84,7 +84,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('ciudadjoven', {
     url: "/ciudadjoven",
     abstract: true,
-    templateUrl: "templates/ciudadjoven.html"
+    templateUrl: "templates/ciudadjoven.html",
+    controller: 'AppCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -183,10 +184,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 .state('ciudadjoven.evento', {
-    url: '/eventos/:eventoName',
+    url: '/eventos/:eventoId',
     views:{
       'tab-eventos': {
-        templateUrl: "templates/evento.html"
+        templateUrl: "templates/evento.html",
+        controller: 'EventoCtrl'
       }
     }
   })
