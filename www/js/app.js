@@ -183,10 +183,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 .state('ciudadjoven.evento', {
-    url: '/eventos/:eventoName',
+    url: '/eventos/:eventoId',
     views:{
       'tab-eventos': {
-        templateUrl: "templates/evento.html"
+        templateUrl: "templates/evento.html",
+        controller: 'EventoCtrl'
       }
     }
   })

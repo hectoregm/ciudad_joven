@@ -12,6 +12,8 @@ app.controller('EventosCtrl', function($scope,$timeout){
 	};
 });
 
-
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
+	$scope.evento = eventos[$stateParams.eventoId];
+});
 
 
