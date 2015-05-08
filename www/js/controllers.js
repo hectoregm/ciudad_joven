@@ -1,4 +1,4 @@
-var app = angular.module('starter.controllers', []);
+var app = angular.module('starter.controllers', ['ngCordova']);
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     // Form data for the login modal
@@ -48,6 +48,31 @@ app.controller('EventosCtrl', function($scope,$timeout){
 app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
 	$scope.evento = eventos[$stateParams.eventoId];
 });
+
+
+
+app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
+	$scope.shareT = function(message, image, link){
+		alert("hola");
+		$cordovaSocialSharing.canShareVia("twitter", message, image, link).then(function(result) {
+            $cordovaSocialSharing.shareViaTwitter(message, image, link);
+        }, function(error){
+            alert("Cannot share on Twitter");
+        });
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

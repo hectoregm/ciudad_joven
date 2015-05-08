@@ -1,7 +1,7 @@
 //Eventos de prueba
 var eventos =[
     { name: 'Corona Capital 2015',
-      img: '../img/license-to-ill.jpg',
+      img: '/img/license-to-ill.jpg',
       fecha: '11/05/2015',
       lugar: '4ta Curva Hnos Rodriguez',
       descripcion: 'Festival de música del género rock con más de 100 bandas repartidas en 4 escenarios',
@@ -101,7 +101,8 @@ var eventos =[
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

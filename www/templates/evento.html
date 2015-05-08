@@ -12,21 +12,21 @@
   			<br>
   			Fecha:
   			<br>
-  				20/Abril/15
+  				{{evento.fecha}}
   			<br>
   			<br>
   			Lugar:
   			<br>
-  				Foro Sol
+  				{{evento.lugar}}
   			</div>
   			<a id="linkBol" href="">Boletos Aquí</a>
 		</div>
 		<div class="row">
   			<div class="col secEve2">
   				<center>
-  					<i class="icon ion-social-twitter posicionIconRed"></i>
-            <i class="icon ion-social-facebook posicionIconRed"></i>
-  					<i class="icon ion-social-googleplus posicionIconRed"></i>
+  					<i ng-click="shareT()" class="icon ion-social-twitter posicionIconRed"></i>
+            <i ng-click="" class="icon ion-social-facebook posicionIconRed"></i>
+  					<i ng-click="" class="icon ion-social-googleplus posicionIconRed"></i>
   				</center>
   			</div>
   			<div class="col secEve2">
@@ -39,8 +39,7 @@
 		<div class="row responsive-sm" style="margin-left: 10px;width: 355px;">
 			<p>Descripcion: </p>
 			<div class="col" id="secDesc">
-			kwvefliwhvfphjWVÑJHWVJHFVWJHFVWJHFVJWHVFJHWVFJHWVFRJHWVHVWR
-			UEGFWJEGFIKWEJFGKJ
+			 {{evento.descripcion}}
 			</div>
 			<p>Comentarios <i id="flch" class="icon ion-chevron-down"></i></p>
   			<div class="col" id="secComent">
