@@ -1,4 +1,4 @@
-var app = angular.module('starter.controllers', ['ngCordova']);
+var app = angular.module('starter.controllers', []);
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     // Form data for the login modal
@@ -33,13 +33,13 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     };
 })
 
-app.controller('EventosCtrl', function($scope,$timeout){
-	$scope.eventos = eventos.slice(0,12);
+app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
+	$scope.eventos = eventos.slice(0,15);
 	$scope.haveMoreData = true;
 	
 	$scope.loadMore = function() {
 		$timeout(function(){
-			$scope.eventos = $scope.eventos.concat(eventos.slice(0,12));
+			$scope.eventos = $scope.eventos.concat(eventos.slice(0,15));
 			$scope.$broadcast('scroll.infiniteScrollcomplete');
 		}, 2000);
 	};
@@ -50,7 +50,7 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
 });
 
 
-
+/**
 app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
 	$scope.shareT = function(message, image, link){
 		alert("hola");
@@ -62,7 +62,7 @@ app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
 	}
 });
 
-
+*/
 
 
 

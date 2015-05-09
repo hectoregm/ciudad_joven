@@ -93,6 +93,7 @@
 	height: 216px;
 	width: 40px;
 	position: relative;
+	margin-left: 19px;
 }
 
 .secEveInfo{
@@ -102,17 +103,17 @@
 #linkBol{
 	position: absolute;
  	margin-top: 171px;
-  	margin-left: -146px;
+  	margin-left: -136px;
   	font-size: 12px;
 }
 
 .secEve2{
-	margin: 10px;
 	margin-top: -3px;
+	margin-left: 31px;
 }
 .posicionIconRed{
-	margin: 10px;
-	margin-left: 25px;
+	margin: 9px;
+	margin-left: 23px;
 }
 
 #agregar{
