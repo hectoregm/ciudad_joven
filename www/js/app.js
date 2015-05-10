@@ -169,6 +169,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/artista.html',
+        controller: 'EventosCtrl'
       }
     }
   })
@@ -178,6 +179,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/banda.html',
+             controller: 'EventosCtrl'
       }
     }
   })
@@ -187,6 +189,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/genero.html',
+             controller: 'EventosCtrl'
       }
     }
   })
@@ -197,6 +200,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/nombre.html',
+             controller: 'EventosCtrl'
       }
     }
   })
@@ -206,6 +210,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/localidad.html',
+             controller: 'EventosCtrl'
       }
     }
   })
@@ -216,6 +221,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-busqueda': {
         templateUrl: 'templates/busquedas/fecha.html',
+             controller: 'EventosCtrl'
       }
     }
   })

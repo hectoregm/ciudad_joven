@@ -31,7 +31,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
             $scope.closeLogin();
         }, 1000);
     };
-})
+});
 
 app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 	$scope.eventos = eventos.slice(0,15);
@@ -50,6 +50,22 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
 });
 
 
+app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
+    $scope.eventos = eventos.slice(0,15);
+    $scope.haveMoreData = true;
+    
+    $scope.loadMore = function() {
+        $timeout(function(){
+            $scope.eventos = $scope.eventos.concat(eventos.slice(0,15));
+            $scope.$broadcast('scroll.infiniteScrollcomplete');
+        }, 2000);
+    };
+});
+
+app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
+$scope.evento = eventos[$stateParams.eventoId];
+});
+
 /**
 app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
 	$scope.shareT = function(message, image, link){
@@ -63,6 +79,7 @@ app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
 });
 
 */
+
 
 
 
