@@ -101,7 +101,7 @@ var eventos =[
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
 
 .run(function($ionicPlatform) {
@@ -231,6 +231,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'tab-conf': {
         templateUrl: 'templates/config.html',
+      }
+    }
+  })
+
+  .state('ciudadjoven.conf_user', {
+    url: '/configuraciones_usuario',
+    views: {
+      'tab-conf': {
+        templateUrl: 'templates/config_user.html',
       }
     }
   })
