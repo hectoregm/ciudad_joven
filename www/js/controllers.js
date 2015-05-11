@@ -1,6 +1,6 @@
 var app = angular.module('starter.controllers', []);
 
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -21,9 +21,16 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
         $scope.modal.show();
     };
 
+    $scope.register = function() {
+      console.log("En el callback register");
+      $state.go("ciudadjoven.registro");
+    }
+
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
         console.log('Doing login', $scope.loginData);
+        console.log($scope.loginData.username);
+        console.log($scope.loginData.password);
 
         // Simulate a login delay. Remove this and replace with your login
         // code if using a login system
