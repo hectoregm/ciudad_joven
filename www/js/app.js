@@ -250,6 +250,16 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     }
   })
 
+  .state('ciudadjoven.busquedaSingle',{
+    url: '/busquedas/:eventoId',
+    views:{
+      'tab-busqueda':{
+        templateUrl: "templates/evento.html",
+        controller: 'EventoCtrl'
+      }
+    }
+  })
+
 .state('ciudadjoven.evento', {
     url: '/eventos/:eventoId',
     views:{
