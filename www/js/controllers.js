@@ -71,7 +71,7 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
   
   $scope.remItem = function($index){
     console.log("Mostrar");
-    $scope.comment.splice($index,1);
+    $scope.comments.splice($index,1);
   }
 });
 
