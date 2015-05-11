@@ -68,7 +68,7 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
   };
 });
 
-app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope, User){
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout, User){
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
@@ -108,6 +108,7 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope
 app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
     $scope.eventos = eventos.slice(0,15);
     $scope.haveMoreData = true;
+
     
     $scope.loadMore = function() {
         $timeout(function(){
@@ -120,6 +121,18 @@ app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
 app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
 $scope.evento = eventos[$stateParams.eventoId];
 });
+
+app.controller('ConfigCtrl',function($scope,$stateParams,$timeout,User){
+  User.checkSession();
+  $scope.user = User;
+});
+
+
+app.controller('ConfigUserCtrl',function($scope,$stateParams,$timeout,User){
+  User.checkSession();
+  $scope.user = User;
+});
+
 
 /**
 app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
