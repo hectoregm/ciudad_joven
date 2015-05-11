@@ -215,15 +215,15 @@ a{
 }
 
 li{
+	height: 60px;
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-    border-bottom: 1px solid #ccc;
-}
-
-li:last-child{
-	border: none; 
+    border-width: 1px;
+    border-color: #ccc;
+    border-style: solid;
+    margin-top: -1px;
 }
             
-li a{ 
+li{ 
 	text-decoration: none; 
 	color: #000; 
 	display: block;
@@ -231,4 +231,13 @@ li a{
 
 #comentarios{
 	font-size: 11px;
-}																																																																																																																			
+}				
+
+#tache{
+	float: right;
+	font-size: 11px;
+	margin-top: -6px;
+	font-size: 18px;
+	margin-right: 2px;
+	color: gray;
+}																																																																																																															

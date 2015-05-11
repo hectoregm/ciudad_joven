@@ -43,7 +43,7 @@
 			</div>
 			<div id="cajaComenatirios">
         <form>
-          Crear Comentario
+          Crear Comentario:
           <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
           </textarea>
           <button id="botonComents" class="button button-small button-light activated" ng-click="createComment();">
@@ -52,9 +52,11 @@
           
           <p>Comentarios <i id="flch" class="icon ion-chevron-down"></i></p>
           <ul>
-            <li id="comentarios" ng-repeat="com in comments"> 
+            <li id="comentarios" ng-repeat="com in comments track by $index">
+              {usario.name}: 
+              <a id="tache" href="" ng-click="remItem($index)">x</a>
+              <br>
               {{com}}
-              <a style="float: right;" href="" ng-click="remItem($index)">x</a> 
             </li>
           </ul>
         </form>
