@@ -47,6 +47,20 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 
 app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
 	$scope.evento = eventos[$stateParams.eventoId];
+    $scope.coments = function(){
+        $scope.comments =[];
+        console.log("Boton");
+        if($scope.txtcomment != ' '){
+            $scope.comments.push($scope.txtcomment);
+            $scope.txtcomment=" ";
+            console.log("If")
+        } 
+
+    }
+    $scope.remItem = function($index){
+        console.log("Mostrar");
+        $scope.comment.splice($index,1);
+    }
 });
 
 

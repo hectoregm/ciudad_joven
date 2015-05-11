@@ -198,3 +198,32 @@ a{
 #flch:hover{
 	color: #00ADEF;
 }
+
+#cajaComent{
+	margin-top: 6px;																																											
+  	width: 339px;
+  	height: 50px;
+  	border-style: solid;
+  	border-color: #ddd;
+  	border-width: 1px;
+  	border-radius: 2px;
+}
+
+#botonComents{
+	margin-left: 274px;
+	margin-top: -1px;
+}
+
+li{
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;            }
+
+li:last-child{
+	border: none; 
+}
+            
+li a{ 
+	text-decoration: none; 
+	color: #000; 
+	display: block;
+}        																																																																																																																								

@@ -41,10 +41,26 @@
 			<div class="col" id="secDesc">
 			 {{evento.descripcion}}
 			</div>
-			<p>Comentarios <i id="flch" class="icon ion-chevron-down"></i></p>
-  			<div class="col" id="secComent">
-  				Aquí van los comentarios :D
-  			</div>
+			<div id="cajaComenatirios">
+        <form>
+          Crear Comentario
+          <textarea ng-model="txtcomment" id="cajaComent" placeholder="Escribe comentario">
+          </textarea>
+          <button id="botonComents" class="button button-small button-light activated" ng-click="coments();">
+            Comentar
+          </button>
+          <p>Comenatios</p>
+          <ul>
+            <li ng-repeat="com in comment"> 
+              {{com}}
+              <a style="float: right;" href="" ng-click="remItem($index)">x</a> 
+            </li>
+          </ul>
+        </form>
+        
+      </div>
 		</div>
 	</ion-content>
 </ion-view>
+
+<!--<p>Comentarios <i id="flch" class="icon ion-chevron-down"></i></p>-->
