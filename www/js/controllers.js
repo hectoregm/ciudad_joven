@@ -56,7 +56,6 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
-
   $scope.comments = [];
   $scope.createComment = function() {
     console.log($scope);

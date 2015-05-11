@@ -52,7 +52,7 @@
           
           <p>Comentarios <i id="flch" class="icon ion-chevron-down"></i></p>
           <ul>
-            <li ng-repeat="com in comments"> 
+            <li id="comentarios" ng-repeat="com in comments"> 
               {{com}}
               <a style="float: right;" href="" ng-click="remItem($index)">x</a> 
             </li>
