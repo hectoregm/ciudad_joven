@@ -18,8 +18,9 @@
   			Lugar:
   			<br>
   				{{evento.lugar}}
+          <a id="linkBol" href="" class="">Boletos Aquí</a>
   			</div>
-  			<a id="linkBol" href="">Boletos Aquí</a>
+  			
 		</div>
 		<div class="row">
   			<div class="col secEve2">
@@ -37,33 +38,40 @@
   			</div>
 		</div>
 		<div class="row responsive-sm" style="margin-left: 10px;width: 355px;">
-			<p>Descripcion: </p>
-			<div class="col" id="secDesc">
-			 {{evento.descripcion}}
-			</div>
-			<div id="cajaComenatirios">
-        <form>
-          Crear Comentario:
-          <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
-          </textarea>
-          <button id="botonComents" class="button button-small button-light activated" ng-click="createComment();">
-            Comentar
-          </button>
-          <p>Comentarios 
-            <i id="flch" class="icon ion-chevron-down" ng-click="hiddenComments()"></i>
-          </p>
-          <ul ng-show="hideComment" >
-            <li id="comentarios" ng-repeat="com in comments track by $index">
-              {usario.name}: 
-              <a id="tache" href="" ng-click="remItem($index)">x</a>
-              <br>
-              {{com}}
-            </li>
-          </ul>
-        </form>
-        
+			<p style="margin-left:3px;">Descripcion: </p>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col" id="secDesc">
+       {{evento.descripcion}}
       </div>
-		</div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col">
+        <form>
+        <p style="margin-left: 9px;">Crear Comentario:</p>
+        <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
+        </textarea>
+        <button id="botonComents" class="button button-small button-light activated" ng-click="createComment();">
+          Comentar
+        </button>
+      </form>
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <p style="margin-left: 14px;">Comentarios 
+        <i id="flch" class="icon ion-chevron-down" ng-click="hiddenComments()"></i>
+      </p>
+    </div>
+    <div class="row responsive-sm">
+      <ul ng-show="hideComment" >
+        <li id="comentarios" ng-repeat="com in comments track by $index">
+          {usario.name}: 
+          <a id="tache" href="" ng-click="remItem($index)">x</a>
+          <br>
+          {{com}}
+        </li>
+      </ul>
+    </div>
 	</ion-content>
 </ion-view>
 
