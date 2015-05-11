@@ -1,16 +1,25 @@
 <ion-view view-title="">
-  <ion-content class="padding">
-    <center>
-      <h1 id="titulo">Ciudad Joven</h1> 
-      <img class="logo" src="img/iconoCJ.svg">
-    </center>
-    
-    <button class="button button-block button-positive" ng-click="register()">
-      Registro
-    </button>
-    <button class="button button-block button-positive" ng-click="login()">
-      Ingresar
-    </button>
+  <ion-content>
+    <div class="row">
+      <div class="col col-50 col-offset-50">
+        {{user.email}}
+        <p class="fright" ng-hide="user.email">
+
+          <a class="link" ng-click="register()">Registro</a>
+        | <a class="link" ng-click="login()">Ingresar</a>
+      </p>
+      </div> 
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1 id="titulo">Ciudad Joven</h1> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-90">
+        <img class="logo" src="img/iconoCJ.svg">
+      </div>
+    </div>
   </ion-content>
 </ion-view>
 

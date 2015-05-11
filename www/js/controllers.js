@@ -1,8 +1,10 @@
-var app = angular.module('starter.controllers', []);
+var app = angular.module('starter.controllers', ['starter.services']);
 
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, User) {
     // Form data for the login modal
     $scope.loginData = {};
+    $scope.registerData = {};
+    $scope.user = User;
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -36,6 +38,16 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
         // code if using a login system
         $timeout(function() {
             $scope.closeLogin();
+        }, 1000);
+    };
+    
+    $scope.doRegistration = function() {
+        $timeout(function() {
+          if (User.register($scope.registerData)) {
+            $state.go('ciudadjoven.inicio');
+          } else {
+            console.log("Error in registration");
+          }
         }, 1000);
     };
 });
