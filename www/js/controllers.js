@@ -1,10 +1,9 @@
 var app = angular.module('starter.controllers', []);
 
-<<<<<<< HEAD
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
-=======
+roller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $window, User) {
->>>>>>> bd6d919d12fc162b0848054f76cccd9b3c0721a3
+
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -60,11 +59,8 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 	};
 });
 
-<<<<<<< HEAD
-app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
-=======
 app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope, User){
->>>>>>> bd6d919d12fc162b0848054f76cccd9b3c0721a3
+
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
