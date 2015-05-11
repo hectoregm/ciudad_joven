@@ -216,7 +216,8 @@ a{
 
 li{
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-    border-bottom: 1px solid #ccc;            }
+    border-bottom: 1px solid #ccc;
+}
 
 li:last-child{
 	border: none; 
