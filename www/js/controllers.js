@@ -4,6 +4,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, User) 
     // Form data for the login modal
     $scope.loginData = {};
     $scope.registerData = {};
+    $scope.user = User;
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {

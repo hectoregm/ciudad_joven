@@ -2,7 +2,9 @@
   <ion-content>
     <div class="row">
       <div class="col col-50 col-offset-50">
-        <p class="fright">
+        {{user.email}}
+        <p class="fright" ng-hide="user.email">
+
           <a class="link" ng-click="register()">Registro</a>
         | <a class="link" ng-click="login()">Ingresar</a>
       </p>

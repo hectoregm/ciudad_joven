@@ -99,9 +99,9 @@ var eventos =[
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state, User) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -128,7 +128,10 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     url: "/ciudadjoven",
     abstract: true,
     templateUrl: "templates/ciudadjoven.html",
-    controller: 'AppCtrl'
+    controller: 'AppCtrl',
+      onEnter: function(User) {
+        User.checkSession();
+      }
   })
 
   // Each tab has its own nav history stack:
