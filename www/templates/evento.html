@@ -44,14 +44,15 @@
 			<div id="cajaComenatirios">
         <form>
           Crear Comentario
-          <textarea ng-model="txtcomment" id="cajaComent" placeholder="Escribe comentario">
+          <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
           </textarea>
-          <button id="botonComents" class="button button-small button-light activated" ng-click="coments();">
+          <button id="botonComents" class="button button-small button-light activated" ng-click="createComment();">
             Comentar
           </button>
-          <p>Comenatios</p>
+
+          <p>Comentarios</p>
           <ul>
-            <li ng-repeat="com in comment"> 
+            <li ng-repeat="com in comments"> 
               {{com}}
               <a style="float: right;" href="" ng-click="remItem($index)">x</a> 
             </li>
