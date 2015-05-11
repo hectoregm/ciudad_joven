@@ -1,5 +1,12 @@
 /* Empty. Add your own CSS if you like */
 
+a.link {
+  color: #00ADEF;
+}
+
+.fright {
+  float: right;
+}
 
 .secBus{
 	width: 50px;
@@ -14,23 +21,19 @@
 }
 
 #titulo{
-	margin-top: 30%;
 	letter-spacing: 2px; 
 	color: #00ADEF;
 	font-size: 2.35em;
 	font-family: 'Fjalla One', sans-serif;
+  text-align: center;
 }
 
 .logo{
-	margin-left: 20px;
 	width: 360px;
 	height: 320px;
 	margin-top: -10%;
 }
 
-.row{
-	margin-top: 20%;
-}
 #iconArt{
 	width: 55px;
 	height: 55px;
