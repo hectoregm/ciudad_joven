@@ -45,8 +45,13 @@
        {{evento.descripcion}}
       </div>
     </div>
+<<<<<<< HEAD
     <div class="row" style="100%">
       <div class="col">
+=======
+    <div class="row responsive-sm">
+      <div class="col" ng-hide="!user.email">
+>>>>>>> bd6d919d12fc162b0848054f76cccd9b3c0721a3
         <form>
         <p style="margin-left: 9px;">Crear Comentario:</p>
         <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
@@ -58,6 +63,11 @@
         </center>
         
       </form>
+      </div>
+      <div class="col" ng-hide="user.email">
+        <button class="button button-block button-positive" ng-click="login()">
+          Ingresar
+        </button>
       </div>
     </div>
     <div class="row responsive-sm">

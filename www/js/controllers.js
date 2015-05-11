@@ -1,6 +1,10 @@
 var app = angular.module('starter.controllers', []);
 
+<<<<<<< HEAD
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+=======
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $window, User) {
+>>>>>>> bd6d919d12fc162b0848054f76cccd9b3c0721a3
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -25,16 +29,20 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
       console.log("En el callback register");
       $state.go("ciudadjoven.registro");
     }
+    
+    $scope.logout = function() {
+      User.destroySession();
+      $window.location.href = 'index.html';
+    }
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
         console.log('Doing login', $scope.loginData);
-        console.log($scope.loginData.username);
-        console.log($scope.loginData.password);
 
         // Simulate a login delay. Remove this and replace with your login
         // code if using a login system
         $timeout(function() {
+            User.auth($scope.loginData.username, $scope.loginData.password);
             $scope.closeLogin();
         }, 1000);
     };
@@ -52,11 +60,22 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 	};
 });
 
+<<<<<<< HEAD
 app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
+=======
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope, User){
+>>>>>>> bd6d919d12fc162b0848054f76cccd9b3c0721a3
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
   $scope.comments = [];
+  User.checkSession();
+  console.log(User);
+  console.log(User.email);
+  $scope.user = User;
+  
+  console.log($scope.user.email);
+  
   $scope.createComment = function() {
     console.log($scope);
     console.log("Crear comentario");
