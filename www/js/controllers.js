@@ -52,7 +52,7 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 	};
 });
 
-app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope){
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
@@ -73,6 +73,12 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
     console.log("Mostrar");
     $scope.comments.splice($index,1);
   }
+
+  $scope.hideComment = true; 
+  $scope.hiddenComments = function(){
+    $scope.hideComment = !$scope.hideComment;  
+  }
+  
 });
 
 
