@@ -184,13 +184,13 @@ a{
 }
 
 .categorias{
-	color:white;
+	color: black;
 	font-size: 15px;
-	margin-top: 6px;
+	margin-top: -2px;
 }
 
 .categoriasD{
-	color: grey;
+	color: black;
 	font-size: 15px;
 	margin-top: 3px;
 }
