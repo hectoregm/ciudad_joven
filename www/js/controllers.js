@@ -1,11 +1,10 @@
-var app = angular.module('starter.controllers', []);
-
-roller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+var app = angular.module('starter.controllers', ['starter.services']);
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $window, User) {
-
     // Form data for the login modal
     $scope.loginData = {};
+    $scope.registerData = {};
+    $scope.user = User;
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -45,22 +44,31 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $windo
             $scope.closeLogin();
         }, 1000);
     };
+    
+    $scope.doRegistration = function() {
+        $timeout(function() {
+          if (User.register($scope.registerData)) {
+            $state.go('ciudadjoven.inicio');
+          } else {
+            console.log("Error in registration");
+          }
+        }, 1000);
+    };
 });
 
 app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
-	$scope.eventos = eventos.slice(0,15);
-	$scope.haveMoreData = true;
-	
-	$scope.loadMore = function() {
-		$timeout(function(){
-			$scope.eventos = $scope.eventos.concat(eventos.slice(0,15));
-			$scope.$broadcast('scroll.infiniteScrollcomplete');
-		}, 2000);
-	};
+  $scope.eventos = eventos.slice(0,15);
+  $scope.haveMoreData = true;
+  
+  $scope.loadMore = function() {
+    $timeout(function(){
+      $scope.eventos = $scope.eventos.concat(eventos.slice(0,15));
+      $scope.$broadcast('scroll.infiniteScrollcomplete');
+    }, 2000);
+  };
 });
 
 app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope, User){
-
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
@@ -86,8 +94,14 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope
   
   $scope.remItem = function($index){
     console.log("Mostrar");
-    $scope.comment.splice($index,1);
+    $scope.comments.splice($index,1);
   }
+
+  $scope.hideComment = true; 
+  $scope.hiddenComments = function(){
+    $scope.hideComment = !$scope.hideComment;  
+  }
+  
 });
 
 
@@ -109,29 +123,14 @@ $scope.evento = eventos[$stateParams.eventoId];
 
 /**
 app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){
-	$scope.shareT = function(message, image, link){
-		alert("hola");
-		$cordovaSocialSharing.canShareVia("twitter", message, image, link).then(function(result) {
+  $scope.shareT = function(message, image, link){
+    alert("hola");
+    $cordovaSocialSharing.canShareVia("twitter", message, image, link).then(function(result) {
             $cordovaSocialSharing.shareViaTwitter(message, image, link);
         }, function(error){
             alert("Cannot share on Twitter");
         });
-	}
+  }
 });
-
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
