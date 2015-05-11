@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="row responsive-sm">
-      <div class="col">
+      <div class="col" ng-hide="!user.email">
         <form>
         <p style="margin-left: 9px;">Crear Comentario:</p>
         <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
@@ -55,6 +55,11 @@
           Comentar
         </button>
       </form>
+      </div>
+      <div class="col" ng-hide="user.email">
+        <button class="button button-block button-positive" ng-click="login()">
+          Ingresar
+        </button>
       </div>
     </div>
     <div class="row responsive-sm">

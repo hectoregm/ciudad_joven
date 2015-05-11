@@ -9,7 +9,6 @@ app.factory('User', function($q, $localstorage) {
     llastname: false,
     events: [],
     users: {},
-    test: false
   };
   
   o.saveUsers = function() {
@@ -37,6 +36,16 @@ app.factory('User', function($q, $localstorage) {
 
     // set data in localstorage object
     $localstorage.setObject('user', userData);
+  }
+  
+  o.destroySession = function() {
+    $localstorage.setObject('user', {});
+    o.email = false;
+    o.password = false;
+    o.firstname = false;
+    o.flastname = false;
+    o.llastname = false;
+    o.events = [];
   }
   
   o.checkSession = function() {
