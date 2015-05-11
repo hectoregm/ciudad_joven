@@ -45,15 +45,18 @@
        {{evento.descripcion}}
       </div>
     </div>
-    <div class="row responsive-sm">
+    <div class="row" style="100%">
       <div class="col">
         <form>
         <p style="margin-left: 9px;">Crear Comentario:</p>
         <textarea ng-model="event.txtcomment" id="cajaComent" placeholder="Escribe comentario">
         </textarea>
-        <button id="botonComents" class="button button-small button-light activated" ng-click="createComment();">
+        <center>
+        <button id="botonComents" style="margin-top:3%" class="button button-small button-light activated" ng-click="createComment();">
           Comentar
         </button>
+        </center>
+        
       </form>
       </div>
     </div>

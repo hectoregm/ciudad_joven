@@ -1,10 +1,8 @@
-var app = angular.module('starter.controllers', ['starter.services']);
+var app = angular.module('starter.controllers', []);
 
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, User) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
     // Form data for the login modal
     $scope.loginData = {};
-    $scope.registerData = {};
-    $scope.user = User;
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -40,16 +38,6 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, User) 
             $scope.closeLogin();
         }, 1000);
     };
-    
-    $scope.doRegistration = function() {
-        $timeout(function() {
-          if (User.register($scope.registerData)) {
-            $state.go('ciudadjoven.inicio');
-          } else {
-            console.log("Error in registration");
-          }
-        }, 1000);
-    };
 });
 
 app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
@@ -64,7 +52,7 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
 	};
 });
 
-app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope){
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout){
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
@@ -83,14 +71,8 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope
   
   $scope.remItem = function($index){
     console.log("Mostrar");
-    $scope.comments.splice($index,1);
+    $scope.comment.splice($index,1);
   }
-
-  $scope.hideComment = true; 
-  $scope.hiddenComments = function(){
-    $scope.hideComment = !$scope.hideComment;  
-  }
-  
 });
 
 
