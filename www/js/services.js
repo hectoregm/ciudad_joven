@@ -8,19 +8,20 @@ app.factory('User', function($q, $localstorage) {
     flastname: false,
     llastname: false,
     events: {},
-    users: {},
   };
+  
+  var users = {};
   
   o.saveUsers = function() {
     console.log("Save users");
-    $localstorage.setObject('users', o.users);
+    $localstorage.setObject('users', users);
   }
   
   o.getUsers = function() {
     console.log("Get users");
-    var users = $localstorage.getObject('users');
-    if (users) {
-      o.users = $localstorage.getObject('users');
+    var data = $localstorage.getObject('users');
+    if (data) {
+      users = $localstorage.getObject('users');
     }
   }
   
@@ -77,8 +78,8 @@ app.factory('User', function($q, $localstorage) {
   
   o.auth = function(username, password) {
     o.getUsers();
-    if (o.users[username]) {
-      o.setSession(o.users[username]);
+    if (users[username]) {
+      o.setSession(users[username]);
       return true;
     } else {
       return false;
@@ -88,7 +89,7 @@ app.factory('User', function($q, $localstorage) {
   o.register = function(userData) {
     console.log('Doing registration', userData);
     
-    o.users[userData.email] = userData;
+    users[userData.email] = userData;
     
     o.setSession(userData);
     o.saveUsers();
@@ -102,14 +103,18 @@ app.factory('User', function($q, $localstorage) {
     console.log("Adding event");
     
     o.events[event.id] = event;
+    users[o.email] = o;
     $localstorage.setObject('user', o);
+    o.saveUsers();
   }
   
   o.removeEvent = function(event) {
     console.log("Removing event");
     
     delete o.events[event.id];
+    users[o.email] = o;
     $localstorage.setObject('user', o);
+    o.saveUsers();
   }
   
   return o;
