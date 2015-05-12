@@ -47,6 +47,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $windo
     
     $scope.doRegistration = function() {
         $timeout(function() {
+          $scope.registerData.events = {};
           if (User.register($scope.registerData)) {
             $state.go('ciudadjoven.inicio');
           } else {
@@ -87,14 +88,14 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, User){
   $scope.addEventToCalendar = function() {
     console.log("Añadiendo evento a calendario");
     
-    User.events[$scope.evento.id] = $scope.evento;
+    User.addEvent($scope.evento);
     $scope.event.inCalendar = true;
   }
   
   $scope.removeEventFromCalendar = function() {
     console.log("Removiendo evento del calendario");
     
-    delete User.events[$scope.evento.id];
+    User.removeEvent($scope.evento);
     $scope.event.inCalendar = false;
   }
   

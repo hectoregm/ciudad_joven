@@ -33,6 +33,11 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = userData.firstname;
     o.flastname = userData.flastname;
     o.llastname = userData.llastname;
+    if (userData.events) {
+      o.events = userData.events;
+    } else {
+      o.events = {};
+    }
 
     // set data in localstorage object
     $localstorage.setObject('user', userData);
@@ -45,11 +50,13 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = false;
     o.flastname = false;
     o.llastname = false;
-    o.events = [];
+    o.events = {};
   }
   
   o.checkSession = function() {
     var defer = $q.defer();
+    
+    o.getUsers();
     
     if(o.email) {
       return defer.resolve(true);
@@ -89,6 +96,20 @@ app.factory('User', function($q, $localstorage) {
     console.log("Registration successful");
     
     return true;
+  }
+  
+  o.addEvent = function(event) {
+    console.log("Adding event");
+    
+    o.events[event.id] = event;
+    $localstorage.setObject('user', o);
+  }
+  
+  o.removeEvent = function(event) {
+    console.log("Removing event");
+    
+    delete o.events[event.id];
+    $localstorage.setObject('user', o);
   }
   
   return o;
