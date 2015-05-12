@@ -1,7 +1,12 @@
-
 <ion-view view-title="Configuraciones">
   <ion-content>
-    <ion-list>
+     <div class="col" ng-hide="user.email">
+        <button class="button button-block button-positive" ng-click="login()">
+          Ingresar
+        </button>
+    </div>
+
+    <ion-list  ng-hide="!user.email">
       <ion-item class="item item-divider">
         
       </ion-item>

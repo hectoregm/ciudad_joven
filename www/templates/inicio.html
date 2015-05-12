@@ -14,11 +14,21 @@
     </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col" ng-hide="user.email">
         <center>
-          <h1 id="titulo">Ciudad Joven</h1> 
+          <h1 class="titulo">Ciudad Joven</h1> 
         <img class="logo" src="img/iconoCJ.svg"> 
         </center>
+      </div>
+      <div class="col" ng-hide="!user.email">
+        <h1 class="titulo">Mis eventos</h1>
+          <ion-list class="Eventos">
+            <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="evento in user.events track by $index" href="#/ciudadjoven/eventos/{{evento.id}}">
+              <img style="width: 56px;height: 80px;margin-left: 15px;" src="{{evento.img}}">
+              <p style="margin-top: 34px; color: #00ADEF"><strong>{{evento.name}}</strong></p>
+              <span class="icon ion-chevron-right flecha"></span>
+            </ion-item>
+          </ion-list>
       </div>
     </div>
   </ion-content>

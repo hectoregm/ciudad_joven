@@ -5,6 +5,25 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $windo
     $scope.loginData = {};
     $scope.registerData = {};
     $scope.user = User;
+    
+    var milis = 5 * 1000;
+    var date = new Date(Date.now() + milis);
+
+    document.addEventListener('deviceready', function () {
+    
+      console.log("Plugin");
+      console.log(window.plugin);
+
+      if (window.plugin) {
+        window.plugin.notification.local.schedule({text: 'Test'});
+        window.plugin.notification.local.schedule({
+          id:      1,
+          title:   'Ciudad Joven',
+          text: 'Tu evento esta proximo',
+          at:    date,
+        });
+      }
+    });
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -47,6 +66,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $windo
     
     $scope.doRegistration = function() {
         $timeout(function() {
+          $scope.registerData.events = {};
           if (User.register($scope.registerData)) {
             $state.go('ciudadjoven.inicio');
           } else {
@@ -68,17 +88,35 @@ app.controller('EventosCtrl', function($scope,$stateParams,$timeout){
   };
 });
 
-app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope, User){
+app.controller('EventoCtrl', function($scope, $stateParams, $timeout, User){
   $scope.evento = eventos[$stateParams.eventoId];
   $scope.event = {};
   $scope.event.txtcomment = ''
   $scope.comments = [];
+  $scope.event.inCalendar = false;
+
   User.checkSession();
+  
+  if (User.events[$scope.evento.id]) {
+    $scope.event.inCalendar = true;
+  }
+  
   console.log(User);
-  console.log(User.email);
   $scope.user = User;
   
-  console.log($scope.user.email);
+  $scope.addEventToCalendar = function() {
+    console.log("Añadiendo evento a calendario");
+    
+    User.addEvent($scope.evento);
+    $scope.event.inCalendar = true;
+  }
+  
+  $scope.removeEventFromCalendar = function() {
+    console.log("Removiendo evento del calendario");
+    
+    User.removeEvent($scope.evento);
+    $scope.event.inCalendar = false;
+  }
   
   $scope.createComment = function() {
     console.log($scope);
@@ -108,6 +146,7 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, $rootScope
 app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
     $scope.eventos = eventos.slice(0,15);
     $scope.haveMoreData = true;
+
     
     $scope.loadMore = function() {
         $timeout(function(){
@@ -120,6 +159,18 @@ app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
 app.controller('BusquedaCtrl',function($scope,$stateParams,$timeout){
 $scope.evento = eventos[$stateParams.eventoId];
 });
+
+app.controller('ConfigCtrl',function($scope,$stateParams,$timeout,User){
+  User.checkSession();
+  $scope.user = User;
+});
+
+
+app.controller('ConfigUserCtrl',function($scope,$stateParams,$timeout,User){
+  User.checkSession();
+  $scope.user = User;
+});
+
 
 /**
 app.controller("EventoCtrl", function($scope, $cordovaSocialSharing){

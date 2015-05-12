@@ -7,20 +7,21 @@ app.factory('User', function($q, $localstorage) {
     firstname: false,
     flastname: false,
     llastname: false,
-    events: [],
-    users: {},
+    events: {},
   };
+  
+  var users = {};
   
   o.saveUsers = function() {
     console.log("Save users");
-    $localstorage.setObject('users', o.users);
+    $localstorage.setObject('users', users);
   }
   
   o.getUsers = function() {
     console.log("Get users");
-    var users = $localstorage.getObject('users');
-    if (users) {
-      o.users = $localstorage.getObject('users');
+    var data = $localstorage.getObject('users');
+    if (data) {
+      users = $localstorage.getObject('users');
     }
   }
   
@@ -33,6 +34,11 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = userData.firstname;
     o.flastname = userData.flastname;
     o.llastname = userData.llastname;
+    if (userData.events) {
+      o.events = userData.events;
+    } else {
+      o.events = {};
+    }
 
     // set data in localstorage object
     $localstorage.setObject('user', userData);
@@ -45,11 +51,13 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = false;
     o.flastname = false;
     o.llastname = false;
-    o.events = [];
+    o.events = {};
   }
   
   o.checkSession = function() {
     var defer = $q.defer();
+    
+    o.getUsers();
     
     if(o.email) {
       return defer.resolve(true);
@@ -70,8 +78,8 @@ app.factory('User', function($q, $localstorage) {
   
   o.auth = function(username, password) {
     o.getUsers();
-    if (o.users[username]) {
-      o.setSession(o.users[username]);
+    if (users[username]) {
+      o.setSession(users[username]);
       return true;
     } else {
       return false;
@@ -81,7 +89,7 @@ app.factory('User', function($q, $localstorage) {
   o.register = function(userData) {
     console.log('Doing registration', userData);
     
-    o.users[userData.email] = userData;
+    users[userData.email] = userData;
     
     o.setSession(userData);
     o.saveUsers();
@@ -89,6 +97,39 @@ app.factory('User', function($q, $localstorage) {
     console.log("Registration successful");
     
     return true;
+  }
+  
+  o.addEvent = function(event) {
+    console.log("Adding event");
+    
+    o.events[event.id] = event;
+    users[o.email] = o;
+    $localstorage.setObject('user', o);
+    
+    var milis = 10 * 1000;
+    var date = new Date(Date.now() + milis);
+    
+    document.addEventListener('deviceready', function () {
+      if (window.plugin) {
+        window.plugin.notification.local.schedule({
+          id:      event.id,
+          title:   'Ciudad Joven',
+          text: event.name + ' esta próximo',
+          at:    date,
+        });
+      }
+    });
+    
+    o.saveUsers();
+  }
+  
+  o.removeEvent = function(event) {
+    console.log("Removing event");
+    
+    delete o.events[event.id];
+    users[o.email] = o;
+    $localstorage.setObject('user', o);
+    o.saveUsers();
   }
   
   return o;
