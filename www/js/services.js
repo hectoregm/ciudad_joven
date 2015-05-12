@@ -105,6 +105,21 @@ app.factory('User', function($q, $localstorage) {
     o.events[event.id] = event;
     users[o.email] = o;
     $localstorage.setObject('user', o);
+    
+    var milis = 10 * 1000;
+    var date = new Date(Date.now() + milis);
+    
+    document.addEventListener('deviceready', function () {
+      if (window.plugin) {
+        window.plugin.notification.local.schedule({
+          id:      event.id,
+          title:   'Ciudad Joven',
+          text: event.name + ' esta próximo',
+          at:    date,
+        });
+      }
+    });
+    
     o.saveUsers();
   }
   

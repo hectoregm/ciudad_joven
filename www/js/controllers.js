@@ -5,6 +5,25 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $windo
     $scope.loginData = {};
     $scope.registerData = {};
     $scope.user = User;
+    
+    var milis = 5 * 1000;
+    var date = new Date(Date.now() + milis);
+
+    document.addEventListener('deviceready', function () {
+    
+      console.log("Plugin");
+      console.log(window.plugin);
+
+      if (window.plugin) {
+        window.plugin.notification.local.schedule({text: 'Test'});
+        window.plugin.notification.local.schedule({
+          id:      1,
+          title:   'Ciudad Joven',
+          text: 'Tu evento esta proximo',
+          at:    date,
+        });
+      }
+    });
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
