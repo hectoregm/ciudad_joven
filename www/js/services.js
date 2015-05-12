@@ -7,7 +7,7 @@ app.factory('User', function($q, $localstorage) {
     firstname: false,
     flastname: false,
     llastname: false,
-    events: [],
+    events: {},
     users: {},
   };
   

@@ -73,12 +73,30 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, User){
   $scope.event = {};
   $scope.event.txtcomment = ''
   $scope.comments = [];
+  $scope.event.inCalendar = false;
+
   User.checkSession();
+  
+  if (User.events[$scope.evento.id]) {
+    $scope.event.inCalendar = true;
+  }
+  
   console.log(User);
-  console.log(User.email);
   $scope.user = User;
   
-  console.log($scope.user.email);
+  $scope.addEventToCalendar = function() {
+    console.log("Añadiendo evento a calendario");
+    
+    User.events[$scope.evento.id] = $scope.evento;
+    $scope.event.inCalendar = true;
+  }
+  
+  $scope.removeEventFromCalendar = function() {
+    console.log("Removiendo evento del calendario");
+    
+    delete User.events[$scope.evento.id];
+    $scope.event.inCalendar = false;
+  }
   
   $scope.createComment = function() {
     console.log($scope);
