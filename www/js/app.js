@@ -242,7 +242,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
   })
 
   .state('ciudadjoven.conf_user', {
-    url: '/configuraciones_usuario',
+    url: '/configuraciones/configuraciones_usuario',
     views: {
       'tab-conf': {
         templateUrl: 'templates/config_user.html',
