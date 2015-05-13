@@ -85,6 +85,18 @@ app.controller('EventoCtrl', function($scope, $stateParams, $timeout, User){
   console.log(User);
   $scope.user = User;
   
+  $scope.toggleEvent = function() {
+    console.log("Toggle event");
+    
+    if ($scope.event.inCalendar) {
+      User.removeEvent($scope.evento);
+      $scope.event.inCalendar = false;
+    } else {
+      User.addEvent($scope.evento);
+      $scope.event.inCalendar = true;
+    }
+  }
+  
   $scope.addEventToCalendar = function() {
     console.log("Añadiendo evento a calendario");
     

@@ -50,14 +50,11 @@
   				</center>
   			</div>
   			<div class="col secEve2">
-          <a class="button button-clear" ng-cloak ng-show="!event.inCalendar" ng-click="addEventToCalendar()">
+          <a class="button button-clear" ng-cloak ng-show="user.email" ng-click="toggleEvent()">
             <i class="icon ion-android-calendar"></i>
-            <strong> Agregar</strong>
+            <strong ng-show="!event.inCalendar"> Agregar</strong>
+            <strong ng-show="event.inCalendar"> Remover</strong>
            </a>
-           <a class="button button-clear" ng-cloak ng-show="event.inCalendar" ng-click="removeEventFromCalendar()">
-             <i class="icon ion-android-calendar"></i>
-             <strong> Remover</strong>
-            </a>
   			</div>
 		</div>
 		<div class="row responsive-sm" style="margin-left: 10px;width: 355px;">
