@@ -100,7 +100,7 @@
       <div>
       <ul ng-show="hideComment" >
         <li id="comentarios" ng-repeat="com in comments track by $index">
-          {usario.name}: 
+          {{user.firstname}}: 
           <a id="tache" href="" ng-click="remItem($index)">x</a>
           <br>
           {{com}}
