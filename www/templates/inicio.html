@@ -1,13 +1,13 @@
 <ion-view view-title="">
   <ion-content>
     <div class="row">
-      <div class="col col-50 col-offset-50" ng-hide="user.email">
+      <div class="col col-50 col-offset-50" ng-cloak ng-hide="user.email">
         <p class="fright">
           <a class="link" ng-click="register()">Registro</a>
         | <a class="link" ng-click="login()">Ingresar</a>
       </p>
       </div>
-      <div class="col" ng-hide="!user.email">
+      <div class="col" ng-cloak ng-hide="!user.email">
         <p class="fright">
           {{user.email}} | <a class="link" ng-click="logout()">Cerrar sesion</a>
         </p>

@@ -35,6 +35,8 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = userData.firstname;
     o.flastname = userData.flastname;
     o.llastname = userData.llastname;
+    o.alerts = userData.alerts;
+
     if (userData.events) {
       o.events = userData.events;
     } else {
@@ -52,6 +54,7 @@ app.factory('User', function($q, $localstorage) {
     o.firstname = false;
     o.flastname = false;
     o.llastname = false;
+    o.alerts = false;
     o.events = {};
   }
   
