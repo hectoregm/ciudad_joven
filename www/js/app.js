@@ -240,6 +240,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     views: {
       'tab-conf': {
         templateUrl: 'templates/config.html',
+        controller: 'EventosCtrl'
       }
     }
   })

@@ -20,22 +20,14 @@
       <ion-item class="item item-divider">
        
       </ion-item>
-      <ion-toggle ng-model="activarAlert" toggle-class="toggle-calm" id="toggleTam" >
+      <ion-toggle ng-model="user.alerts" toggle-class="toggle-calm" id="toggleTam" >
         Alertas
       </ion-toggle>
       <ion-list>
-            <ion-item class="item item-input">
-              <span class="input-label">Día</span>
-              <input ng-disabled="!activarAlert" class="form-control" id="contador" type="tel" min="1" max="31">
-            </ion-item>
-            <ion-item class="item item-input">
-              <span class="input-label">Horas</span>
-              <input ng-disabled="!activarAlert" class="form-control" id="contador" type="tel" min="1" max="31">
-            </ion-item>
-            <ion-item class="item item-input">
-              <span class="input-label">Minutos</span>
-              <input ng-disabled="!activarAlert" class="form-control" id="contador" type="tel" min="1" max="31">
-            </ion-item>
+        <label class="item item-input">
+          <span class="input-label">Alerta faltando: </span>
+          <input ng-disabled="!user.alerts"type="time">
+        </label>
         </ion-list>
     </ion-list>
   </ion-content>

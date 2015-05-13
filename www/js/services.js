@@ -7,6 +7,7 @@ app.factory('User', function($q, $localstorage) {
     firstname: false,
     flastname: false,
     llastname: false,
+    alerts: false,
     events: {},
   };
   
@@ -110,7 +111,7 @@ app.factory('User', function($q, $localstorage) {
     var date = new Date(Date.now() + milis);
     
     document.addEventListener('deviceready', function () {
-      if (window.plugin) {
+      if (window.plugin && o.alerts) {
         window.plugin.notification.local.schedule({
           id:      event.id,
           title:   'Ciudad Joven',
